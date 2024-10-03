@@ -2,7 +2,7 @@ window.BENCHMARK_DATA = {
   "lastUpdate": 1727970289861,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
-    "My Project Go Benchmark": [
+    "moov-io/ach Benchmarks": [
       {
         "commit": {
           "author": {

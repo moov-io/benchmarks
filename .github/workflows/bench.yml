@@ -46,7 +46,7 @@ jobs:
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
         with:
-          name: "moov-io/${{inputs.name}}"
+          name: "moov-io/${{inputs.name}} Benchmarks"
           tool: 'go'
           output-file-path: "./${{inputs.name}}/output.txt"
           github-token: ${{ secrets.GITHUB_TOKEN }}
