@@ -52,4 +52,4 @@ jobs:
           alert-comment-cc-users: '@adamdecaf'
           # Update files on master branch
           gh-pages-branch: master
-          benchmark-data-dir-path: docs/dev/bench/
+          benchmark-data-dir-path: docs/bench/ach/
