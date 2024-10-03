@@ -47,7 +47,7 @@ jobs:
         with:
           name: My Project Go Benchmark
           tool: 'go'
-          output-file-path: output.txt
+          output-file-path: ./ach/output.txt
           github-token: ${{ secrets.GITHUB_TOKEN }}
           skip-fetch-gh-pages: true
           auto-push: true
