@@ -32,7 +32,7 @@ jobs:
         with:
           repository: moov-io/{{inputs.name}}
           ref: {{inputs.branch}}
-          path: ./{{inputs.name}}}/
+          path: ./{{inputs.name}}/
 
       - uses: actions/setup-go@v5
         with:
