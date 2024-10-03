@@ -9,6 +9,12 @@ permissions:
   contents: write
 
 jobs:
+  setup:
+    name: Setup
+    steps:
+      # "The workflow must contain at least one job with no dependencies."
+      - run: date
+
   benchmark:
     uses: moov-io/benchmarks/.github/workflows/bench.yml@master
     secrets: inherit
