@@ -17,7 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          repository: 'moov-io/benchmarks'
+
+      - uses: actions/checkout@v4
+        with:
           repository: 'moov-io/ach'
+          path: './ach/'
 
       - uses: actions/setup-go@v5
         with:
@@ -25,6 +30,7 @@ jobs:
 
       - name: moov-io/ach
         run: |
+          cd ./ach/
           go test . -bench BenchmarkBuildFile -benchmem > output.txt
           go test . -bench Read -benchmem >> output.txt
           go test . -bench Write -benchmem >> output.txt
