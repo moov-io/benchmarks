@@ -11,6 +11,7 @@ permissions:
 jobs:
   setup:
     name: Setup
+    runs-on: ubuntu-latest
     steps:
       # "The workflow must contain at least one job with no dependencies."
       - run: date
