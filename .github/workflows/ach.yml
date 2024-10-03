@@ -9,53 +9,19 @@ permissions:
   contents: write
 
 jobs:
-  run:
-    name: Run
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          repository: 'moov-io/benchmarks'
-
-      - uses: actions/checkout@v4
-        with:
-          repository: 'moov-io/ach'
-          path: './ach/'
-
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "stable"
-
-      - name: moov-io/ach
-        run: |
-          cd ./ach/
-          go test . -bench BenchmarkBuildFile -benchmem > output.txt
-          go test . -bench Read -benchmem >> output.txt
-          go test . -bench Write -benchmem >> output.txt
-          go test . -bench AlphaField -benchmem >> output.txt
-          go test . -bench NumericField -benchmem >> output.txt
-          go test . -bench ParseNumField -benchmem >> output.txt
-          go test . -bench ParseStringField -benchmem >> output.txt
-          go test . -bench BenchmarkMergeFiles -benchmem >> output.txt
-          go test . -bench BenchmarkCalculateCheckDigit -benchmem >> output.txt
-          go test ./server/ -bench Benchmark -benchmem >> output.txt
-
-      - name: Store benchmark result
-        uses: benchmark-action/github-action-benchmark@v1
-        with:
-          name: My Project Go Benchmark
-          tool: 'go'
-          output-file-path: ./ach/output.txt
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          skip-fetch-gh-pages: true
-          auto-push: true
-          # Show alert with commit comment on detecting possible performance regression
-          alert-threshold: '120%'
-          comment-on-alert: true
-          fail-on-alert: true
-          alert-comment-cc-users: '@adamdecaf'
-          # Update files on master branch
-          gh-pages-branch: master
-          benchmark-data-dir-path: docs/bench/ach/
+  benchmark:
+    uses: moov-io/benchmarks/.github/workflows/bench.yml@master
+    secrets: inherit
+    needs: manifest
+    with:
+      name: ach
+      command: |
+        go test . -bench BenchmarkBuildFile -benchmem > output.txt
+        go test . -bench Read -benchmem >> output.txt
+        go test . -bench Write -benchmem >> output.txt
+        go test . -bench AlphaField -benchmem >> output.txt
+        go test . -bench NumericField -benchmem >> output.txt
+        go test . -bench ParseNumField -benchmem >> output.txt
+        go test . -bench ParseStringField -benchmem >> output.txt
+        go test . -bench BenchmarkMergeFiles -benchmem >> output.txt
+        go test . -bench BenchmarkCalculateCheckDigit -benchmem >> output.txt

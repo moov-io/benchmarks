@@ -1,0 +1,57 @@
+name: Run Benchmarks
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      command:
+        required: true
+        type: string
+
+permissions:
+  deployments: write
+  contents: write
+
+jobs:
+  run:
+    name: Run
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: 'moov-io/benchmarks'
+
+      - uses: actions/checkout@v4
+        with:
+          repository: moov-io/{{inputs.name}}
+          path: ./{{inputs.name}}}/
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+
+      - name: moov-io/{{inputs.name}}
+        run: |
+          cd ./{{inputs.name}}/
+          {{inputs.command}}
+
+      - name: Store benchmark result
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          name: moov-io/{{inputs.name}}
+          tool: 'go'
+          output-file-path: ./{{inputs.name}}/output.txt
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-fetch-gh-pages: true
+          auto-push: true
+          # Show alert with commit comment on detecting possible performance regression
+          alert-threshold: '120%'
+          comment-on-alert: true
+          fail-on-alert: true
+          alert-comment-cc-users: '@adamdecaf'
+          # Update files on master branch
+          gh-pages-branch: master
+          benchmark-data-dir-path: docs/bench/{{inputs.name}}/
