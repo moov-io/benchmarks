@@ -16,8 +16,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        repository: 'moov-io/ach'
-        ref: 'master'
+        with:
+          repository: 'moov-io/ach'
 
       - uses: actions/setup-go@v5
         with:
