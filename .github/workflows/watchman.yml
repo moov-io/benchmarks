@@ -22,5 +22,5 @@ jobs:
     with:
       name: watchman
       command: |
-        docker compose up -d
-        go test ./... -bench Benchmark -benchmem > output.txt
+        go test ./... -bench BenchmarkSearchHandler -benchmem > output.txt
+        go test ./... -bench BenchmarkJaroWinkler -benchmem >> output.txt
