@@ -22,4 +22,4 @@ jobs:
     with:
       name: watchman
       command: |
-        go test ./... -bench . -benchmem > output.txt
+        go test ./... -bench Benchmark -benchmem > output.txt
