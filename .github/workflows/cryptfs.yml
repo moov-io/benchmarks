@@ -1,0 +1,25 @@
+name: cryptfs Benchmarks
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  deployments: write
+  contents: write
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    steps:
+      # "The workflow must contain at least one job with no dependencies."
+      - run: date
+
+  benchmark:
+    uses: moov-io/benchmarks/.github/workflows/bench.yml@master
+    secrets: inherit
+    with:
+      name: cryptfs
+      command: |
+        go test ./... -bench . -benchmem > output.txt
