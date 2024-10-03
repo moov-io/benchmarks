@@ -30,9 +30,9 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          repository: moov-io/{{inputs.name}}
-          ref: {{inputs.branch}}
-          path: ./{{inputs.name}}/
+          repository: "moov-io/${{inputs.name}}"
+          ref: "${{inputs.branch}}"
+          path: "./${{inputs.name}}/"
 
       - uses: actions/setup-go@v5
         with:
@@ -40,15 +40,15 @@ jobs:
 
       - name: Running Benchmarks
         run: |
-          cd ./{{inputs.name}}/
-          {{inputs.command}}
+          cd ./${{inputs.name}}/
+          ${{inputs.command}}
 
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
         with:
-          name: moov-io/{{inputs.name}}
+          name: "moov-io/${{inputs.name}}"
           tool: 'go'
-          output-file-path: ./{{inputs.name}}/output.txt
+          output-file-path: "./${{inputs.name}}/output.txt"
           github-token: ${{ secrets.GITHUB_TOKEN }}
           skip-fetch-gh-pages: true
           auto-push: true
@@ -59,4 +59,4 @@ jobs:
           alert-comment-cc-users: '@adamdecaf'
           # Update files on master branch
           gh-pages-branch: master
-          benchmark-data-dir-path: docs/bench/{{inputs.name}}/
+          benchmark-data-dir-path: "docs/bench/${{inputs.name}}/"
