@@ -19,7 +19,6 @@ jobs:
   benchmark:
     uses: moov-io/benchmarks/.github/workflows/bench.yml@master
     secrets: inherit
-    needs: manifest
     with:
       name: ach
       command: |
