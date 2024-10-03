@@ -22,4 +22,5 @@ jobs:
     with:
       name: cryptfs
       command: |
+        make setup
         go test ./... -bench Benchmark -benchmem > output.txt

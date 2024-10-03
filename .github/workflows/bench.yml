@@ -60,3 +60,8 @@ jobs:
           # Update files on master branch
           gh-pages-branch: master
           benchmark-data-dir-path: "docs/bench/${{inputs.name}}/"
+
+      - name: Logs
+        if: ${{ failure() }}
+        run: |
+          cat ./${{inputs.name}}/output.txt
