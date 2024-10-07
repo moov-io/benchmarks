@@ -22,5 +22,5 @@ jobs:
     with:
       name: watchman
       command: |
-        go test ./... -bench BenchmarkSearchHandler -benchmem > output.txt
-        go test ./... -bench BenchmarkJaroWinkler -benchmem >> output.txt
+        go test ./... -short -bench BenchmarkSearchHandler -benchmem > output.txt
+        go test ./... -short -bench BenchmarkJaroWinkler -benchmem >> output.txt
