@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728050529551,
+  "lastUpdate": 1728303905129,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
     "moov-io/watchman Benchmarks": [
@@ -140,6 +140,76 @@ window.BENCHMARK_DATA = {
             "value": 32,
             "unit": "allocs/op",
             "extra": "249553 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "id": "c602c7250deb7373fc5525d637edc4e113d966fb",
+          "message": "add moov-io/cryptfs Benchmarks (go) benchmark result for 455402bbc3d8a7a89fd7b9abe484d196de8820cb",
+          "timestamp": "2024-10-07T02:51:05Z",
+          "url": "https://github.com/moov-io/benchmarks/commit/c602c7250deb7373fc5525d637edc4e113d966fb"
+        },
+        "date": 1728303905115,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkSearchHandler",
+            "value": 184173290,
+            "unit": "ns/op\t49711770 B/op\t 1645685 allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSearchHandler - ns/op",
+            "value": 184173290,
+            "unit": "ns/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSearchHandler - B/op",
+            "value": 49711770,
+            "unit": "B/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSearchHandler - allocs/op",
+            "value": 1645685,
+            "unit": "allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler",
+            "value": 4718,
+            "unit": "ns/op\t     862 B/op\t      32 allocs/op",
+            "extra": "251415 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - ns/op",
+            "value": 4718,
+            "unit": "ns/op",
+            "extra": "251415 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - B/op",
+            "value": 862,
+            "unit": "B/op",
+            "extra": "251415 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - allocs/op",
+            "value": 32,
+            "unit": "allocs/op",
+            "extra": "251415 times\n4 procs"
           }
         ]
       }
