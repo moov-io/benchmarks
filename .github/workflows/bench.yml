@@ -5,6 +5,10 @@ on:
       name:
         required: true
         type: string
+      org:
+        required: false
+        type: string
+        default: "moov-io"
       branch:
         required: false
         type: string
@@ -30,7 +34,7 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          repository: "moov-io/${{inputs.name}}"
+          repository: "${{inputs.org}}/${{inputs.name}}"
           ref: "${{inputs.branch}}"
           path: "./${{inputs.name}}/"
 
@@ -46,7 +50,7 @@ jobs:
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
         with:
-          name: "moov-io/${{inputs.name}} Benchmarks"
+          name: "${{inputs.org}}/${{inputs.name}} Benchmarks"
           tool: 'go'
           output-file-path: "./${{inputs.name}}/output.txt"
           github-token: ${{ secrets.GITHUB_TOKEN }}
