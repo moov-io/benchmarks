@@ -32,12 +32,12 @@ jobs:
 
     steps:
       - uses: webfactory/ssh-agent@v0.9.0
-        if: secrets.ssh_key != ''
+        if: ${{ secrets.ssh_key != '' && secrets.ssh_key != null }}
         with:
           ssh-private-key: ${{ secrets.ssh_key }}
 
       - name: Configure git to use SSH key
-        if: secrets.ssh_key != ''
+        if: ${{ secrets.ssh_key != '' && secrets.ssh_key != null }}
         run: 'git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"'
 
       - uses: actions/checkout@v4
