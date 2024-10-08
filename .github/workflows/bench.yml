@@ -16,6 +16,10 @@ on:
       command:
         required: true
         type: string
+      setup_ssh_key:
+        required: false
+        type: boolean
+        default: false
     secrets:
       ssh_key:
         required: false
@@ -32,12 +36,12 @@ jobs:
 
     steps:
       - uses: webfactory/ssh-agent@v0.9.0
-        if: ${{ secrets.ssh_key != '' && secrets.ssh_key != null }}
+        if: ${{ inputs.setup_ssh_key }}
         with:
           ssh-private-key: ${{ secrets.ssh_key }}
 
       - name: Configure git to use SSH key
-        if: ${{ secrets.ssh_key != '' && secrets.ssh_key != null }}
+        if: ${{ inputs.setup_ssh_key }}
         run: 'git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"'
 
       - uses: actions/checkout@v4
