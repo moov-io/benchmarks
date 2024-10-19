@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729254139532,
+  "lastUpdate": 1729340454652,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
     "moov-io/watchman Benchmarks": [
@@ -716,6 +716,52 @@ window.BENCHMARK_DATA = {
             "value": 32,
             "unit": "allocs/op",
             "extra": "250677 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "id": "3e4fe6c87b9cd4a8b72e1956b596562b5a6bcd5f",
+          "message": "add moov-io/cryptfs Benchmarks (go) benchmark result for f878b0ea6a3c1fa53e095f2dd9ce60d8fb4e03f6",
+          "timestamp": "2024-10-19T02:44:08Z",
+          "url": "https://github.com/moov-io/benchmarks/commit/3e4fe6c87b9cd4a8b72e1956b596562b5a6bcd5f"
+        },
+        "date": 1729340454638,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler",
+            "value": 4683,
+            "unit": "ns/op\t     863 B/op\t      32 allocs/op",
+            "extra": "247716 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - ns/op",
+            "value": 4683,
+            "unit": "ns/op",
+            "extra": "247716 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - B/op",
+            "value": 863,
+            "unit": "B/op",
+            "extra": "247716 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - allocs/op",
+            "value": 32,
+            "unit": "allocs/op",
+            "extra": "247716 times\n4 procs"
           }
         ]
       }
