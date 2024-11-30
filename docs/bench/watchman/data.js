@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1732883033793,
+  "lastUpdate": 1732969307336,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
     "moov-io/watchman Benchmarks": [
@@ -2648,6 +2648,52 @@ window.BENCHMARK_DATA = {
             "value": 16,
             "unit": "allocs/op",
             "extra": "333106 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "id": "6d7add922c8a8c19a476af4891fff0f6471d24e5",
+          "message": "add moov-io/cryptfs Benchmarks (go) benchmark result for f2566f4bde1e76c0e67162475cfacc4a6f82c64d",
+          "timestamp": "2024-11-30T02:52:41Z",
+          "url": "https://github.com/moov-io/benchmarks/commit/6d7add922c8a8c19a476af4891fff0f6471d24e5"
+        },
+        "date": 1732969307318,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler",
+            "value": 3515,
+            "unit": "ns/op\t     357 B/op\t      16 allocs/op",
+            "extra": "334546 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - ns/op",
+            "value": 3515,
+            "unit": "ns/op",
+            "extra": "334546 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - B/op",
+            "value": 357,
+            "unit": "B/op",
+            "extra": "334546 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/bestPairsJaroWinkler - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "334546 times\n4 procs"
           }
         ]
       }
