@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1736339005569,
+  "lastUpdate": 1736425394709,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
     "moov-io/watchman Benchmarks": [
@@ -4488,6 +4488,52 @@ window.BENCHMARK_DATA = {
             "value": 16,
             "unit": "allocs/op",
             "extra": "330026 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "id": "2d6f41e17686608c53cfb5cc6e67786d89340fd1",
+          "message": "add moov-io/ach Benchmarks (go) benchmark result for 8a382ede726745c6391d56762ec3694875b6eae4",
+          "timestamp": "2025-01-09T01:06:39Z",
+          "url": "https://github.com/moov-io/benchmarks/commit/2d6f41e17686608c53cfb5cc6e67786d89340fd1"
+        },
+        "date": 1736425394688,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkJaroWinkler/BestPairsJaroWinkler",
+            "value": 3582,
+            "unit": "ns/op\t     357 B/op\t      16 allocs/op",
+            "extra": "328407 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/BestPairsJaroWinkler - ns/op",
+            "value": 3582,
+            "unit": "ns/op",
+            "extra": "328407 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/BestPairsJaroWinkler - B/op",
+            "value": 357,
+            "unit": "B/op",
+            "extra": "328407 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/BestPairsJaroWinkler - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "328407 times\n4 procs"
           }
         ]
       }
