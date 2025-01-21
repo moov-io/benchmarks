@@ -13,8 +13,10 @@ jobs:
     name: Setup
     runs-on: ubuntu-latest
     steps:
-      # "The workflow must contain at least one job with no dependencies."
-      - run: date
+      - name: Setup Linux Dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get install -y libgl1-mesa-dev and xorg-dev
 
   benchmark:
     uses: moov-io/benchmarks/.github/workflows/bench.yml@master
