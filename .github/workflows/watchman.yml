@@ -23,6 +23,8 @@ jobs:
     secrets: inherit
     with:
       name: watchman
+      setup: |
+          sudo apt-get install -y libgl1-mesa-dev and xorg-dev
       command: |
         go test ./... -short -bench BenchmarkSearchHandler -benchmem > output.txt
         go test ./... -short -bench BenchmarkJaroWinkler -benchmem >> output.txt
