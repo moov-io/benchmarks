@@ -23,6 +23,9 @@ jobs:
       name: watchman
       setup: |
           sudo apt-get install -y libgl1-mesa-dev and xorg-dev
+          make install
       command: |
-        go test ./... -short -bench BenchmarkSearchHandler -benchmem > output.txt
-        go test ./... -short -bench BenchmarkJaroWinkler -benchmem >> output.txt
+        go test ./internal/search/... -short -bench Benchmark_Search -run Benchmark_Search -benchmem > output.txt
+        go test ./internal/stringscore/... -short -bench BenchmarkJaroWinkler -run BenchmarkJaroWinkler -benchmem >> output.txt
+        go test ./internal/postalpool/... -short -bench BenchmarkPostalPool -run BenchmarkPostalPool -benchmem >> output.txt
+        go test -tags libpostal ./pkg/address/... -bench=Bench -run Bench -benchmem >> output.txt
