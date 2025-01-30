@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738188294636,
+  "lastUpdate": 1738239727298,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
     "moov-io/watchman Benchmarks": [
@@ -5396,6 +5396,316 @@ window.BENCHMARK_DATA = {
             "value": 16,
             "unit": "allocs/op",
             "extra": "324884 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "id": "6bbb465f62500d2072ee295124937c3fb2695ac2",
+          "message": "add moov-io/cryptfs Benchmarks (go) benchmark result for 1f27e2fbca991f250b63a86e6c778b7ed965de94",
+          "timestamp": "2025-01-30T02:39:25Z",
+          "url": "https://github.com/moov-io/benchmarks/commit/6bbb465f62500d2072ee295124937c3fb2695ac2"
+        },
+        "date": 1738239727274,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "Benchmark_Search/1_group",
+            "value": 69849442,
+            "unit": "ns/op\t 8150539 B/op\t  713916 allocs/op",
+            "extra": "16 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/1_group - ns/op",
+            "value": 69849442,
+            "unit": "ns/op",
+            "extra": "16 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/1_group - B/op",
+            "value": 8150539,
+            "unit": "B/op",
+            "extra": "16 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/1_group - allocs/op",
+            "value": 713916,
+            "unit": "allocs/op",
+            "extra": "16 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/3_group",
+            "value": 34620711,
+            "unit": "ns/op\t 8150946 B/op\t  713921 allocs/op",
+            "extra": "36 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/3_group - ns/op",
+            "value": 34620711,
+            "unit": "ns/op",
+            "extra": "36 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/3_group - B/op",
+            "value": 8150946,
+            "unit": "B/op",
+            "extra": "36 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/3_group - allocs/op",
+            "value": 713921,
+            "unit": "allocs/op",
+            "extra": "36 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/5_group",
+            "value": 29826800,
+            "unit": "ns/op\t 8151401 B/op\t  713927 allocs/op",
+            "extra": "40 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/5_group - ns/op",
+            "value": 29826800,
+            "unit": "ns/op",
+            "extra": "40 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/5_group - B/op",
+            "value": 8151401,
+            "unit": "B/op",
+            "extra": "40 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/5_group - allocs/op",
+            "value": 713927,
+            "unit": "allocs/op",
+            "extra": "40 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/10_group",
+            "value": 32088918,
+            "unit": "ns/op\t 8152277 B/op\t  713938 allocs/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/10_group - ns/op",
+            "value": 32088918,
+            "unit": "ns/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/10_group - B/op",
+            "value": 8152277,
+            "unit": "B/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/10_group - allocs/op",
+            "value": 713938,
+            "unit": "allocs/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/20_group",
+            "value": 27513028,
+            "unit": "ns/op\t 8152677 B/op\t  713956 allocs/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/20_group - ns/op",
+            "value": 27513028,
+            "unit": "ns/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/20_group - B/op",
+            "value": 8152677,
+            "unit": "B/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/20_group - allocs/op",
+            "value": 713956,
+            "unit": "allocs/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/25_group",
+            "value": 29011654,
+            "unit": "ns/op\t 8153016 B/op\t  713966 allocs/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/25_group - ns/op",
+            "value": 29011654,
+            "unit": "ns/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/25_group - B/op",
+            "value": 8153016,
+            "unit": "B/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/25_group - allocs/op",
+            "value": 713966,
+            "unit": "allocs/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/50_group",
+            "value": 27539893,
+            "unit": "ns/op\t 8155752 B/op\t  714017 allocs/op",
+            "extra": "37 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/50_group - ns/op",
+            "value": 27539893,
+            "unit": "ns/op",
+            "extra": "37 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/50_group - B/op",
+            "value": 8155752,
+            "unit": "B/op",
+            "extra": "37 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/50_group - allocs/op",
+            "value": 714017,
+            "unit": "allocs/op",
+            "extra": "37 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/100_group",
+            "value": 27986808,
+            "unit": "ns/op\t 8161047 B/op\t  714118 allocs/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/100_group - ns/op",
+            "value": 27986808,
+            "unit": "ns/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/100_group - B/op",
+            "value": 8161047,
+            "unit": "B/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/100_group - allocs/op",
+            "value": 714118,
+            "unit": "allocs/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/150_group",
+            "value": 27832956,
+            "unit": "ns/op\t 8165188 B/op\t  714217 allocs/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/150_group - ns/op",
+            "value": 27832956,
+            "unit": "ns/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/150_group - B/op",
+            "value": 8165188,
+            "unit": "B/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/150_group - allocs/op",
+            "value": 714217,
+            "unit": "allocs/op",
+            "extra": "48 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/200_group",
+            "value": 27690328,
+            "unit": "ns/op\t 8170419 B/op\t  714322 allocs/op",
+            "extra": "45 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/200_group - ns/op",
+            "value": 27690328,
+            "unit": "ns/op",
+            "extra": "45 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/200_group - B/op",
+            "value": 8170419,
+            "unit": "B/op",
+            "extra": "45 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/200_group - allocs/op",
+            "value": 714322,
+            "unit": "allocs/op",
+            "extra": "45 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/250_group",
+            "value": 28079207,
+            "unit": "ns/op\t 8175189 B/op\t  714423 allocs/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/250_group - ns/op",
+            "value": 28079207,
+            "unit": "ns/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/250_group - B/op",
+            "value": 8175189,
+            "unit": "B/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "Benchmark_Search/250_group - allocs/op",
+            "value": 714423,
+            "unit": "allocs/op",
+            "extra": "44 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/BestPairsJaroWinkler",
+            "value": 3614,
+            "unit": "ns/op\t     357 B/op\t      16 allocs/op",
+            "extra": "321255 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/BestPairsJaroWinkler - ns/op",
+            "value": 3614,
+            "unit": "ns/op",
+            "extra": "321255 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/BestPairsJaroWinkler - B/op",
+            "value": 357,
+            "unit": "B/op",
+            "extra": "321255 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkJaroWinkler/BestPairsJaroWinkler - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "321255 times\n4 procs"
           }
         ]
       }
