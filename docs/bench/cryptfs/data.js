@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1738291268607,
+  "lastUpdate": 1738377850728,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
     "moov-io/cryptfs Benchmarks": [
@@ -5566,6 +5566,52 @@ window.BENCHMARK_DATA = {
             "value": 25,
             "unit": "allocs/op",
             "extra": "21343 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "id": "b442ba27f447125c0a4778847c2653090ce1c6d4",
+          "message": "add moov-io/ach Benchmarks (go) benchmark result for 9b221e9dc65fcf6cb1e922c4d254c673c52308b8",
+          "timestamp": "2025-02-01T01:09:04Z",
+          "url": "https://github.com/moov-io/benchmarks/commit/b442ba27f447125c0a4778847c2653090ce1c6d4"
+        },
+        "date": 1738377850705,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkCryptfs__AES",
+            "value": 56879,
+            "unit": "ns/op\t    3104 B/op\t      25 allocs/op",
+            "extra": "20503 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCryptfs__AES - ns/op",
+            "value": 56879,
+            "unit": "ns/op",
+            "extra": "20503 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCryptfs__AES - B/op",
+            "value": 3104,
+            "unit": "B/op",
+            "extra": "20503 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCryptfs__AES - allocs/op",
+            "value": 25,
+            "unit": "allocs/op",
+            "extra": "20503 times\n4 procs"
           }
         ]
       }
