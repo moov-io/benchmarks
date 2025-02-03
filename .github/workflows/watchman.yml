@@ -22,7 +22,7 @@ jobs:
     with:
       name: watchman
       setup: |
-          sudo apt-get install -y libgl1-mesa-dev and xorg-dev
+          sudo apt-get update -qq && apt-get install -y libgl1-mesa-dev and xorg-dev
       command: |
         go test ./internal/search/... -short -bench Benchmark_Search -run Benchmark_Search -benchmem > output.txt
         go test ./internal/stringscore/... -short -bench BenchmarkJaroWinkler -run BenchmarkJaroWinkler -benchmem >> output.txt
