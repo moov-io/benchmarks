@@ -16,7 +16,7 @@ jobs:
       # "The workflow must contain at least one job with no dependencies."
       - run: date
 
-  benchmark:
+  benchmark-common:
     uses: moov-io/benchmarks/.github/workflows/bench.yml@master
     secrets: inherit
     with:
@@ -36,10 +36,11 @@ jobs:
     uses: moov-io/benchmarks/.github/workflows/bench.yml@master
     secrets: inherit
     with:
-      name: watchman-ofac
+      name: watchman
       setup: |
         sudo apt-get update
         sudo apt-get install -y libgl1-mesa-dev and xorg-dev
+      output_dir: "watchman-ofac" # intead of watchman
       command: |
         go test ./pkg/ofac/... -short -bench Benchmark -run Benchmark -benchmem > output.txt
 

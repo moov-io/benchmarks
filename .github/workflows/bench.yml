@@ -23,6 +23,9 @@ on:
         required: false
         type: boolean
         default: false
+      output_dir:
+        required: false
+        type: string
     secrets:
       ssh_key:
         required: false
@@ -86,7 +89,7 @@ jobs:
           alert-comment-cc-users: '@adamdecaf'
           # Update files on master branch
           gh-pages-branch: master
-          benchmark-data-dir-path: "docs/bench/${{inputs.name}}/"
+          benchmark-data-dir-path: "docs/bench/${{ inputs.output_dir != '' && inputs.output_dir || inputs.name }}/"
 
       - name: Logs
         if: ${{ failure() }}
