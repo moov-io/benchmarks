@@ -73,6 +73,10 @@ jobs:
           cd ./${{inputs.name}}/
           ${{inputs.command}}
 
+      - name: Show Benchmark Results
+        run: |
+          cat ./${{inputs.name}}/output.txt
+
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
         with:
