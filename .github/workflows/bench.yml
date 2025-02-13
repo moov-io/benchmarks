@@ -91,6 +91,7 @@ jobs:
           comment-on-alert: true
           fail-on-alert: true
           alert-comment-cc-users: '@adamdecaf'
+          max-items-in-chart: 25
           # Use the ref of the project being benchmarked, not of moov-io/benchmarks
           gh-repository: "github.com/${{inputs.org}}/${{inputs.name}}"
           # Update files on master branch
