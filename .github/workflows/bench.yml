@@ -69,10 +69,8 @@ jobs:
           ${{inputs.setup}}
 
       - name: Running Benchmarks
-        id: run-benchmarks
         run: |
           cd ./${{inputs.name}}/
-          echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
           ${{inputs.command}}
 
       - name: Show Benchmark Results
@@ -93,8 +91,6 @@ jobs:
           comment-on-alert: true
           fail-on-alert: true
           alert-comment-cc-users: '@adamdecaf'
-          # Use the ref of the project being benchmarked, not of moov-io/benchmarks
-          ref: '${{ steps.run-benchmarks.outputs.hash }}'
           # Update files on master branch
           gh-pages-branch: master
           benchmark-data-dir-path: "docs/bench/${{ inputs.output_dir != '' && inputs.output_dir || inputs.name }}/"
