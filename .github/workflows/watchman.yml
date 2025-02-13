@@ -35,6 +35,7 @@ jobs:
   benchmark-ofac:
     uses: moov-io/benchmarks/.github/workflows/bench.yml@master
     secrets: inherit
+    needs: [benchmark-common] # wait so "git push"'s don't collide
     with:
       name: watchman
       setup: |
