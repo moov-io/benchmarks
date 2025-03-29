@@ -41,7 +41,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: webfactory/ssh-agent@v0.9.0
+      - uses: webfactory/ssh-agent@v0.9.1
         if: ${{ inputs.setup_ssh_key }}
         with:
           ssh-private-key: ${{ secrets.ssh_key }}
