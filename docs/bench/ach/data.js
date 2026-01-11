@@ -1,684 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1768008116228,
+  "lastUpdate": 1768095632315,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
     "moov-io/ach Benchmarks": [
-      {
-        "commit": {
-          "author": {
-            "name": "github-action-benchmark",
-            "username": "github",
-            "email": "github@users.noreply.github.com"
-          },
-          "committer": {
-            "name": "github-action-benchmark",
-            "username": "github",
-            "email": "github@users.noreply.github.com"
-          },
-          "id": "2bd3b67504dc79ad82daa0c0c16c64eb8678bcab",
-          "message": "add moov-io/cryptfs Benchmarks (go) benchmark result for 95dec838c3f779857c655238a0b0e0dcc90fed47",
-          "timestamp": "2025-12-16T03:21:51Z",
-          "url": "https://github.com/moov-io/benchmarks/commit/2bd3b67504dc79ad82daa0c0c16c64eb8678bcab"
-        },
-        "date": 1765934246867,
-        "tool": "go",
-        "benches": [
-          {
-            "name": "BenchmarkBuildFile",
-            "value": 13468,
-            "unit": "ns/op\t   10701 B/op\t     131 allocs/op",
-            "extra": "87949 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkBuildFile - ns/op",
-            "value": 13468,
-            "unit": "ns/op",
-            "extra": "87949 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkBuildFile - B/op",
-            "value": 10701,
-            "unit": "B/op",
-            "extra": "87949 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkBuildFile - allocs/op",
-            "value": 131,
-            "unit": "allocs/op",
-            "extra": "87949 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDDebitRead",
-            "value": 42131,
-            "unit": "ns/op\t   23324 B/op\t     120 allocs/op",
-            "extra": "28557 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDDebitRead - ns/op",
-            "value": 42131,
-            "unit": "ns/op",
-            "extra": "28557 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDDebitRead - B/op",
-            "value": 23324,
-            "unit": "B/op",
-            "extra": "28557 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDDebitRead - allocs/op",
-            "value": 120,
-            "unit": "allocs/op",
-            "extra": "28557 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkWEBDebitRead",
-            "value": 74585,
-            "unit": "ns/op\t   27222 B/op\t     195 allocs/op",
-            "extra": "16095 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkWEBDebitRead - ns/op",
-            "value": 74585,
-            "unit": "ns/op",
-            "extra": "16095 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkWEBDebitRead - B/op",
-            "value": 27222,
-            "unit": "B/op",
-            "extra": "16095 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkWEBDebitRead - allocs/op",
-            "value": 195,
-            "unit": "allocs/op",
-            "extra": "16095 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDDebitFixedLengthRead",
-            "value": 30951,
-            "unit": "ns/op\t   21859 B/op\t      83 allocs/op",
-            "extra": "38743 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDDebitFixedLengthRead - ns/op",
-            "value": 30951,
-            "unit": "ns/op",
-            "extra": "38743 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDDebitFixedLengthRead - B/op",
-            "value": 21859,
-            "unit": "B/op",
-            "extra": "38743 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDDebitFixedLengthRead - allocs/op",
-            "value": 83,
-            "unit": "allocs/op",
-            "extra": "38743 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead",
-            "value": 298112,
-            "unit": "ns/op\t   59060 B/op\t     810 allocs/op",
-            "extra": "3811 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead - ns/op",
-            "value": 298112,
-            "unit": "ns/op",
-            "extra": "3811 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead - B/op",
-            "value": 59060,
-            "unit": "B/op",
-            "extra": "3811 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead - allocs/op",
-            "value": 810,
-            "unit": "allocs/op",
-            "extra": "3811 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead2",
-            "value": 303706,
-            "unit": "ns/op\t   59058 B/op\t     810 allocs/op",
-            "extra": "3934 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead2 - ns/op",
-            "value": 303706,
-            "unit": "ns/op",
-            "extra": "3934 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead2 - B/op",
-            "value": 59058,
-            "unit": "B/op",
-            "extra": "3934 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead2 - allocs/op",
-            "value": 810,
-            "unit": "allocs/op",
-            "extra": "3934 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead3",
-            "value": 99276,
-            "unit": "ns/op\t   29718 B/op\t     264 allocs/op",
-            "extra": "11336 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead3 - ns/op",
-            "value": 99276,
-            "unit": "ns/op",
-            "extra": "11336 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead3 - B/op",
-            "value": 29718,
-            "unit": "B/op",
-            "extra": "11336 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkACHFileRead3 - allocs/op",
-            "value": 264,
-            "unit": "allocs/op",
-            "extra": "11336 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDWrite",
-            "value": 49009,
-            "unit": "ns/op\t   34782 B/op\t     234 allocs/op",
-            "extra": "24286 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDWrite - ns/op",
-            "value": 49009,
-            "unit": "ns/op",
-            "extra": "24286 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDWrite - B/op",
-            "value": 34782,
-            "unit": "B/op",
-            "extra": "24286 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDWrite - allocs/op",
-            "value": 234,
-            "unit": "allocs/op",
-            "extra": "24286 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkLargeWEBWrite",
-            "value": 199659,
-            "unit": "ns/op\t   54713 B/op\t    2069 allocs/op",
-            "extra": "6058 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkLargeWEBWrite - ns/op",
-            "value": 199659,
-            "unit": "ns/op",
-            "extra": "6058 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkLargeWEBWrite - B/op",
-            "value": 54713,
-            "unit": "B/op",
-            "extra": "6058 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkLargeWEBWrite - allocs/op",
-            "value": 2069,
-            "unit": "allocs/op",
-            "extra": "6058 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkFileWriteErr",
-            "value": 8052,
-            "unit": "ns/op\t    7594 B/op\t      73 allocs/op",
-            "extra": "144930 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkFileWriteErr - ns/op",
-            "value": 8052,
-            "unit": "ns/op",
-            "extra": "144930 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkFileWriteErr - B/op",
-            "value": 7594,
-            "unit": "B/op",
-            "extra": "144930 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkFileWriteErr - allocs/op",
-            "value": 73,
-            "unit": "allocs/op",
-            "extra": "144930 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkIATWrite",
-            "value": 154512,
-            "unit": "ns/op\t   61097 B/op\t     721 allocs/op",
-            "extra": "7668 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkIATWrite - ns/op",
-            "value": 154512,
-            "unit": "ns/op",
-            "extra": "7668 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkIATWrite - B/op",
-            "value": 61097,
-            "unit": "B/op",
-            "extra": "7668 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkIATWrite - allocs/op",
-            "value": 721,
-            "unit": "allocs/op",
-            "extra": "7668 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDIATWrite",
-            "value": 231380104,
-            "unit": "1210428822512180116A094101Federal Reserve Bank   My Bank Name                   ",
-            "extra": "101 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDIATWrite - 1210428822512180116A094101Federal",
-            "value": 231380104,
-            "unit": "1210428822512180116A094101Federal",
-            "extra": "101 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDIATWrite - Bank",
-            "value": null,
-            "unit": "Bank",
-            "extra": "101 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDIATWrite - Bank",
-            "value": null,
-            "unit": "Bank",
-            "extra": "101 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkPPDIATWrite - ",
-            "value": null,
-            "unit": "",
-            "extra": "101 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkAlphaFieldShort",
-            "value": 974.4,
-            "unit": "ns/op\t      80 B/op\t       3 allocs/op",
-            "extra": "1236183 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkAlphaFieldShort - ns/op",
-            "value": 974.4,
-            "unit": "ns/op",
-            "extra": "1236183 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkAlphaFieldShort - B/op",
-            "value": 80,
-            "unit": "B/op",
-            "extra": "1236183 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkAlphaFieldShort - allocs/op",
-            "value": 3,
-            "unit": "allocs/op",
-            "extra": "1236183 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkAlphaFieldLong",
-            "value": 97.94,
-            "unit": "ns/op\t      16 B/op\t       1 allocs/op",
-            "extra": "12090039 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkAlphaFieldLong - ns/op",
-            "value": 97.94,
-            "unit": "ns/op",
-            "extra": "12090039 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkAlphaFieldLong - B/op",
-            "value": 16,
-            "unit": "B/op",
-            "extra": "12090039 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkAlphaFieldLong - allocs/op",
-            "value": 1,
-            "unit": "allocs/op",
-            "extra": "12090039 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkNumericFieldShort",
-            "value": 62.11,
-            "unit": "ns/op\t      16 B/op\t       2 allocs/op",
-            "extra": "18732144 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkNumericFieldShort - ns/op",
-            "value": 62.11,
-            "unit": "ns/op",
-            "extra": "18732144 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkNumericFieldShort - B/op",
-            "value": 16,
-            "unit": "B/op",
-            "extra": "18732144 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkNumericFieldShort - allocs/op",
-            "value": 2,
-            "unit": "allocs/op",
-            "extra": "18732144 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkNumericFieldLong",
-            "value": 28.74,
-            "unit": "ns/op\t       8 B/op\t       1 allocs/op",
-            "extra": "40711702 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkNumericFieldLong - ns/op",
-            "value": 28.74,
-            "unit": "ns/op",
-            "extra": "40711702 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkNumericFieldLong - B/op",
-            "value": 8,
-            "unit": "B/op",
-            "extra": "40711702 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkNumericFieldLong - allocs/op",
-            "value": 1,
-            "unit": "allocs/op",
-            "extra": "40711702 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkParseNumField",
-            "value": 13.39,
-            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
-            "extra": "91440477 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkParseNumField - ns/op",
-            "value": 13.39,
-            "unit": "ns/op",
-            "extra": "91440477 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkParseNumField - B/op",
-            "value": 0,
-            "unit": "B/op",
-            "extra": "91440477 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkParseNumField - allocs/op",
-            "value": 0,
-            "unit": "allocs/op",
-            "extra": "91440477 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkParseStringField",
-            "value": 5.927,
-            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
-            "extra": "200039180 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkParseStringField - ns/op",
-            "value": 5.927,
-            "unit": "ns/op",
-            "extra": "200039180 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkParseStringField - B/op",
-            "value": 0,
-            "unit": "B/op",
-            "extra": "200039180 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkParseStringField - allocs/op",
-            "value": 0,
-            "unit": "allocs/op",
-            "extra": "200039180 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles",
-            "value": 298966,
-            "unit": "ns/op\t   57870 B/op\t     666 allocs/op",
-            "extra": "4100 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles - ns/op",
-            "value": 298966,
-            "unit": "ns/op",
-            "extra": "4100 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles - B/op",
-            "value": 57870,
-            "unit": "B/op",
-            "extra": "4100 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles - allocs/op",
-            "value": 666,
-            "unit": "allocs/op",
-            "extra": "4100 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_ValidateOpts",
-            "value": 300087,
-            "unit": "ns/op\t   57896 B/op\t     666 allocs/op",
-            "extra": "3988 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_ValidateOpts - ns/op",
-            "value": 300087,
-            "unit": "ns/op",
-            "extra": "3988 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_ValidateOpts - B/op",
-            "value": 57896,
-            "unit": "B/op",
-            "extra": "3988 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_ValidateOpts - allocs/op",
-            "value": 666,
-            "unit": "allocs/op",
-            "extra": "3988 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeDir",
-            "value": 173926,
-            "unit": "ns/op\t   58080 B/op\t     669 allocs/op",
-            "extra": "5834 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeDir - ns/op",
-            "value": 173926,
-            "unit": "ns/op",
-            "extra": "5834 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeDir - B/op",
-            "value": 58080,
-            "unit": "B/op",
-            "extra": "5834 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeDir - allocs/op",
-            "value": 669,
-            "unit": "allocs/op",
-            "extra": "5834 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeDir_ValidateOpts",
-            "value": 174111,
-            "unit": "ns/op\t   58101 B/op\t     669 allocs/op",
-            "extra": "6408 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeDir_ValidateOpts - ns/op",
-            "value": 174111,
-            "unit": "ns/op",
-            "extra": "6408 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeDir_ValidateOpts - B/op",
-            "value": 58101,
-            "unit": "B/op",
-            "extra": "6408 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeDir_ValidateOpts - allocs/op",
-            "value": 669,
-            "unit": "allocs/op",
-            "extra": "6408 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_3Groups",
-            "value": 361129,
-            "unit": "ns/op\t   63589 B/op\t     726 allocs/op",
-            "extra": "3387 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_3Groups - ns/op",
-            "value": 361129,
-            "unit": "ns/op",
-            "extra": "3387 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_3Groups - B/op",
-            "value": 63589,
-            "unit": "B/op",
-            "extra": "3387 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_3Groups - allocs/op",
-            "value": 726,
-            "unit": "allocs/op",
-            "extra": "3387 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_5Groups",
-            "value": 361175,
-            "unit": "ns/op\t   63612 B/op\t     726 allocs/op",
-            "extra": "3392 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_5Groups - ns/op",
-            "value": 361175,
-            "unit": "ns/op",
-            "extra": "3392 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_5Groups - B/op",
-            "value": 63612,
-            "unit": "B/op",
-            "extra": "3392 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_5Groups - allocs/op",
-            "value": 726,
-            "unit": "allocs/op",
-            "extra": "3392 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_10Groups",
-            "value": 355107,
-            "unit": "ns/op\t   63599 B/op\t     726 allocs/op",
-            "extra": "3477 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_10Groups - ns/op",
-            "value": 355107,
-            "unit": "ns/op",
-            "extra": "3477 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_10Groups - B/op",
-            "value": 63599,
-            "unit": "B/op",
-            "extra": "3477 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_10Groups - allocs/op",
-            "value": 726,
-            "unit": "allocs/op",
-            "extra": "3477 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_100Groups",
-            "value": 342767,
-            "unit": "ns/op\t   63578 B/op\t     727 allocs/op",
-            "extra": "4106 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_100Groups - ns/op",
-            "value": 342767,
-            "unit": "ns/op",
-            "extra": "4106 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_100Groups - B/op",
-            "value": 63578,
-            "unit": "B/op",
-            "extra": "4106 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkMergeFiles/MergeFiles_100Groups - allocs/op",
-            "value": 727,
-            "unit": "allocs/op",
-            "extra": "4106 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkCalculateCheckDigit/valid",
-            "value": 24.9,
-            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
-            "extra": "45077270 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkCalculateCheckDigit/valid - ns/op",
-            "value": 24.9,
-            "unit": "ns/op",
-            "extra": "45077270 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkCalculateCheckDigit/valid - B/op",
-            "value": 0,
-            "unit": "B/op",
-            "extra": "45077270 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkCalculateCheckDigit/valid - allocs/op",
-            "value": 0,
-            "unit": "allocs/op",
-            "extra": "45077270 times\n4 procs"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -16900,6 +16224,682 @@ window.BENCHMARK_DATA = {
             "value": 0,
             "unit": "allocs/op",
             "extra": "45855000 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "id": "2c8c0b1ee277608f8925c33ca648ac6b38088fb6",
+          "message": "add moov-io/cryptfs Benchmarks (go) benchmark result for 2b3a20284f2e9ffb573aca887023eb2329d2eac5",
+          "timestamp": "2026-01-10T03:21:34Z",
+          "url": "https://github.com/moov-io/benchmarks/commit/2c8c0b1ee277608f8925c33ca648ac6b38088fb6"
+        },
+        "date": 1768095632300,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkBuildFile",
+            "value": 12809,
+            "unit": "ns/op\t   10701 B/op\t     131 allocs/op",
+            "extra": "93147 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBuildFile - ns/op",
+            "value": 12809,
+            "unit": "ns/op",
+            "extra": "93147 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBuildFile - B/op",
+            "value": 10701,
+            "unit": "B/op",
+            "extra": "93147 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBuildFile - allocs/op",
+            "value": 131,
+            "unit": "allocs/op",
+            "extra": "93147 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDDebitRead",
+            "value": 36083,
+            "unit": "ns/op\t   23324 B/op\t     120 allocs/op",
+            "extra": "33646 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDDebitRead - ns/op",
+            "value": 36083,
+            "unit": "ns/op",
+            "extra": "33646 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDDebitRead - B/op",
+            "value": 23324,
+            "unit": "B/op",
+            "extra": "33646 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDDebitRead - allocs/op",
+            "value": 120,
+            "unit": "allocs/op",
+            "extra": "33646 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWEBDebitRead",
+            "value": 69299,
+            "unit": "ns/op\t   27222 B/op\t     195 allocs/op",
+            "extra": "18624 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWEBDebitRead - ns/op",
+            "value": 69299,
+            "unit": "ns/op",
+            "extra": "18624 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWEBDebitRead - B/op",
+            "value": 27222,
+            "unit": "B/op",
+            "extra": "18624 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWEBDebitRead - allocs/op",
+            "value": 195,
+            "unit": "allocs/op",
+            "extra": "18624 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDDebitFixedLengthRead",
+            "value": 25766,
+            "unit": "ns/op\t   21859 B/op\t      83 allocs/op",
+            "extra": "46786 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDDebitFixedLengthRead - ns/op",
+            "value": 25766,
+            "unit": "ns/op",
+            "extra": "46786 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDDebitFixedLengthRead - B/op",
+            "value": 21859,
+            "unit": "B/op",
+            "extra": "46786 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDDebitFixedLengthRead - allocs/op",
+            "value": 83,
+            "unit": "allocs/op",
+            "extra": "46786 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead",
+            "value": 262651,
+            "unit": "ns/op\t   59060 B/op\t     810 allocs/op",
+            "extra": "4513 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead - ns/op",
+            "value": 262651,
+            "unit": "ns/op",
+            "extra": "4513 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead - B/op",
+            "value": 59060,
+            "unit": "B/op",
+            "extra": "4513 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead - allocs/op",
+            "value": 810,
+            "unit": "allocs/op",
+            "extra": "4513 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead2",
+            "value": 261566,
+            "unit": "ns/op\t   59061 B/op\t     810 allocs/op",
+            "extra": "4494 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead2 - ns/op",
+            "value": 261566,
+            "unit": "ns/op",
+            "extra": "4494 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead2 - B/op",
+            "value": 59061,
+            "unit": "B/op",
+            "extra": "4494 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead2 - allocs/op",
+            "value": 810,
+            "unit": "allocs/op",
+            "extra": "4494 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead3",
+            "value": 85535,
+            "unit": "ns/op\t   29718 B/op\t     264 allocs/op",
+            "extra": "13933 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead3 - ns/op",
+            "value": 85535,
+            "unit": "ns/op",
+            "extra": "13933 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead3 - B/op",
+            "value": 29718,
+            "unit": "B/op",
+            "extra": "13933 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkACHFileRead3 - allocs/op",
+            "value": 264,
+            "unit": "allocs/op",
+            "extra": "13933 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDWrite",
+            "value": 45674,
+            "unit": "ns/op\t   34783 B/op\t     234 allocs/op",
+            "extra": "26191 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDWrite - ns/op",
+            "value": 45674,
+            "unit": "ns/op",
+            "extra": "26191 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDWrite - B/op",
+            "value": 34783,
+            "unit": "B/op",
+            "extra": "26191 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDWrite - allocs/op",
+            "value": 234,
+            "unit": "allocs/op",
+            "extra": "26191 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkLargeWEBWrite",
+            "value": 201036,
+            "unit": "ns/op\t   54713 B/op\t    2069 allocs/op",
+            "extra": "6110 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkLargeWEBWrite - ns/op",
+            "value": 201036,
+            "unit": "ns/op",
+            "extra": "6110 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkLargeWEBWrite - B/op",
+            "value": 54713,
+            "unit": "B/op",
+            "extra": "6110 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkLargeWEBWrite - allocs/op",
+            "value": 2069,
+            "unit": "allocs/op",
+            "extra": "6110 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFileWriteErr",
+            "value": 7709,
+            "unit": "ns/op\t    7594 B/op\t      73 allocs/op",
+            "extra": "155544 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFileWriteErr - ns/op",
+            "value": 7709,
+            "unit": "ns/op",
+            "extra": "155544 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFileWriteErr - B/op",
+            "value": 7594,
+            "unit": "B/op",
+            "extra": "155544 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFileWriteErr - allocs/op",
+            "value": 73,
+            "unit": "allocs/op",
+            "extra": "155544 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkIATWrite",
+            "value": 141686,
+            "unit": "ns/op\t   61101 B/op\t     721 allocs/op",
+            "extra": "8505 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkIATWrite - ns/op",
+            "value": 141686,
+            "unit": "ns/op",
+            "extra": "8505 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkIATWrite - B/op",
+            "value": 61101,
+            "unit": "B/op",
+            "extra": "8505 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkIATWrite - allocs/op",
+            "value": 721,
+            "unit": "allocs/op",
+            "extra": "8505 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDIATWrite",
+            "value": 231380104,
+            "unit": "1210428822601120139A094101Federal Reserve Bank   My Bank Name                   ",
+            "extra": "101 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDIATWrite - 1210428822601120139A094101Federal",
+            "value": 231380104,
+            "unit": "1210428822601120139A094101Federal",
+            "extra": "101 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDIATWrite - Bank",
+            "value": null,
+            "unit": "Bank",
+            "extra": "101 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDIATWrite - Bank",
+            "value": null,
+            "unit": "Bank",
+            "extra": "101 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPPDIATWrite - ",
+            "value": null,
+            "unit": "",
+            "extra": "101 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkAlphaFieldShort",
+            "value": 977,
+            "unit": "ns/op\t      80 B/op\t       3 allocs/op",
+            "extra": "1226659 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkAlphaFieldShort - ns/op",
+            "value": 977,
+            "unit": "ns/op",
+            "extra": "1226659 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkAlphaFieldShort - B/op",
+            "value": 80,
+            "unit": "B/op",
+            "extra": "1226659 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkAlphaFieldShort - allocs/op",
+            "value": 3,
+            "unit": "allocs/op",
+            "extra": "1226659 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkAlphaFieldLong",
+            "value": 86.32,
+            "unit": "ns/op\t      16 B/op\t       1 allocs/op",
+            "extra": "13690885 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkAlphaFieldLong - ns/op",
+            "value": 86.32,
+            "unit": "ns/op",
+            "extra": "13690885 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkAlphaFieldLong - B/op",
+            "value": 16,
+            "unit": "B/op",
+            "extra": "13690885 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkAlphaFieldLong - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "13690885 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkNumericFieldShort",
+            "value": 54.69,
+            "unit": "ns/op\t      16 B/op\t       2 allocs/op",
+            "extra": "21520405 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkNumericFieldShort - ns/op",
+            "value": 54.69,
+            "unit": "ns/op",
+            "extra": "21520405 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkNumericFieldShort - B/op",
+            "value": 16,
+            "unit": "B/op",
+            "extra": "21520405 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkNumericFieldShort - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "21520405 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkNumericFieldLong",
+            "value": 25.07,
+            "unit": "ns/op\t       8 B/op\t       1 allocs/op",
+            "extra": "46388998 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkNumericFieldLong - ns/op",
+            "value": 25.07,
+            "unit": "ns/op",
+            "extra": "46388998 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkNumericFieldLong - B/op",
+            "value": 8,
+            "unit": "B/op",
+            "extra": "46388998 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkNumericFieldLong - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "46388998 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkParseNumField",
+            "value": 12.66,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "93504658 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkParseNumField - ns/op",
+            "value": 12.66,
+            "unit": "ns/op",
+            "extra": "93504658 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkParseNumField - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "93504658 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkParseNumField - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "93504658 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkParseStringField",
+            "value": 5.196,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "230533694 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkParseStringField - ns/op",
+            "value": 5.196,
+            "unit": "ns/op",
+            "extra": "230533694 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkParseStringField - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "230533694 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkParseStringField - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "230533694 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles",
+            "value": 274196,
+            "unit": "ns/op\t   57881 B/op\t     666 allocs/op",
+            "extra": "4558 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles - ns/op",
+            "value": 274196,
+            "unit": "ns/op",
+            "extra": "4558 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles - B/op",
+            "value": 57881,
+            "unit": "B/op",
+            "extra": "4558 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles - allocs/op",
+            "value": 666,
+            "unit": "allocs/op",
+            "extra": "4558 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_ValidateOpts",
+            "value": 271161,
+            "unit": "ns/op\t   57891 B/op\t     666 allocs/op",
+            "extra": "4596 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_ValidateOpts - ns/op",
+            "value": 271161,
+            "unit": "ns/op",
+            "extra": "4596 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_ValidateOpts - B/op",
+            "value": 57891,
+            "unit": "B/op",
+            "extra": "4596 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_ValidateOpts - allocs/op",
+            "value": 666,
+            "unit": "allocs/op",
+            "extra": "4596 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeDir",
+            "value": 181530,
+            "unit": "ns/op\t   58068 B/op\t     669 allocs/op",
+            "extra": "6650 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeDir - ns/op",
+            "value": 181530,
+            "unit": "ns/op",
+            "extra": "6650 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeDir - B/op",
+            "value": 58068,
+            "unit": "B/op",
+            "extra": "6650 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeDir - allocs/op",
+            "value": 669,
+            "unit": "allocs/op",
+            "extra": "6650 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeDir_ValidateOpts",
+            "value": 179262,
+            "unit": "ns/op\t   58109 B/op\t     669 allocs/op",
+            "extra": "6030 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeDir_ValidateOpts - ns/op",
+            "value": 179262,
+            "unit": "ns/op",
+            "extra": "6030 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeDir_ValidateOpts - B/op",
+            "value": 58109,
+            "unit": "B/op",
+            "extra": "6030 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeDir_ValidateOpts - allocs/op",
+            "value": 669,
+            "unit": "allocs/op",
+            "extra": "6030 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_3Groups",
+            "value": 323851,
+            "unit": "ns/op\t   63619 B/op\t     726 allocs/op",
+            "extra": "3681 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_3Groups - ns/op",
+            "value": 323851,
+            "unit": "ns/op",
+            "extra": "3681 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_3Groups - B/op",
+            "value": 63619,
+            "unit": "B/op",
+            "extra": "3681 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_3Groups - allocs/op",
+            "value": 726,
+            "unit": "allocs/op",
+            "extra": "3681 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_5Groups",
+            "value": 316499,
+            "unit": "ns/op\t   63625 B/op\t     726 allocs/op",
+            "extra": "3613 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_5Groups - ns/op",
+            "value": 316499,
+            "unit": "ns/op",
+            "extra": "3613 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_5Groups - B/op",
+            "value": 63625,
+            "unit": "B/op",
+            "extra": "3613 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_5Groups - allocs/op",
+            "value": 726,
+            "unit": "allocs/op",
+            "extra": "3613 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_10Groups",
+            "value": 318033,
+            "unit": "ns/op\t   63595 B/op\t     726 allocs/op",
+            "extra": "3781 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_10Groups - ns/op",
+            "value": 318033,
+            "unit": "ns/op",
+            "extra": "3781 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_10Groups - B/op",
+            "value": 63595,
+            "unit": "B/op",
+            "extra": "3781 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_10Groups - allocs/op",
+            "value": 726,
+            "unit": "allocs/op",
+            "extra": "3781 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_100Groups",
+            "value": 316802,
+            "unit": "ns/op\t   63446 B/op\t     727 allocs/op",
+            "extra": "4418 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_100Groups - ns/op",
+            "value": 316802,
+            "unit": "ns/op",
+            "extra": "4418 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_100Groups - B/op",
+            "value": 63446,
+            "unit": "B/op",
+            "extra": "4418 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMergeFiles/MergeFiles_100Groups - allocs/op",
+            "value": 727,
+            "unit": "allocs/op",
+            "extra": "4418 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCalculateCheckDigit/valid",
+            "value": 22.54,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "53266728 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCalculateCheckDigit/valid - ns/op",
+            "value": 22.54,
+            "unit": "ns/op",
+            "extra": "53266728 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCalculateCheckDigit/valid - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "53266728 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCalculateCheckDigit/valid - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "53266728 times\n4 procs"
           }
         ]
       }
