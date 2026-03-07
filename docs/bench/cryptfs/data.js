@@ -1,54 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1772770040088,
+  "lastUpdate": 1772855872226,
   "repoUrl": "https://github.com/moov-io/benchmarks",
   "entries": {
     "moov-io/cryptfs Benchmarks": [
-      {
-        "commit": {
-          "author": {
-            "name": "github-action-benchmark",
-            "username": "github",
-            "email": "github@users.noreply.github.com"
-          },
-          "committer": {
-            "name": "github-action-benchmark",
-            "username": "github",
-            "email": "github@users.noreply.github.com"
-          },
-          "id": "d4c20f7411e40b4fa1ca111bb1754522c1f1fc82",
-          "message": "add moov-io/ach Benchmarks (go) benchmark result for 0f80eddcf3c759e611b1846ed48c25d22a0aa5e8",
-          "timestamp": "2026-02-10T02:06:49Z",
-          "url": "https://github.com/moov-io/benchmarks/commit/d4c20f7411e40b4fa1ca111bb1754522c1f1fc82"
-        },
-        "date": 1770697754248,
-        "tool": "go",
-        "benches": [
-          {
-            "name": "BenchmarkCryptfs__AES",
-            "value": 57832,
-            "unit": "ns/op\t    4000 B/op\t      25 allocs/op",
-            "extra": "22125 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkCryptfs__AES - ns/op",
-            "value": 57832,
-            "unit": "ns/op",
-            "extra": "22125 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkCryptfs__AES - B/op",
-            "value": 4000,
-            "unit": "B/op",
-            "extra": "22125 times\n4 procs"
-          },
-          {
-            "name": "BenchmarkCryptfs__AES - allocs/op",
-            "value": 25,
-            "unit": "allocs/op",
-            "extra": "22125 times\n4 procs"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -5638,6 +5592,316 @@ window.BENCHMARK_DATA = {
             "value": 16,
             "unit": "allocs/op",
             "extra": "15175 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "github-action-benchmark",
+            "username": "github",
+            "email": "github@users.noreply.github.com"
+          },
+          "id": "8371b74368da3728ee3d21e7c78bc895a440672c",
+          "message": "add moov-io/ach Benchmarks (go) benchmark result for aef099be6f6a3a5947acdd882b34845b2fd46a36",
+          "timestamp": "2026-03-07T01:44:12Z",
+          "url": "https://github.com/moov-io/benchmarks/commit/8371b74368da3728ee3d21e7c78bc895a440672c"
+        },
+        "date": 1772855872210,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkCryptfs__AES",
+            "value": 63185,
+            "unit": "ns/op\t    4001 B/op\t      25 allocs/op",
+            "extra": "18984 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCryptfs__AES - ns/op",
+            "value": 63185,
+            "unit": "ns/op",
+            "extra": "18984 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCryptfs__AES - B/op",
+            "value": 4001,
+            "unit": "B/op",
+            "extra": "18984 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCryptfs__AES - allocs/op",
+            "value": 25,
+            "unit": "allocs/op",
+            "extra": "18984 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_-1",
+            "value": 81185,
+            "unit": "ns/op\t   38797 B/op\t      16 allocs/op",
+            "extra": "14590 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_-1 - ns/op",
+            "value": 81185,
+            "unit": "ns/op",
+            "extra": "14590 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_-1 - B/op",
+            "value": 38797,
+            "unit": "B/op",
+            "extra": "14590 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_-1 - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "14590 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_0",
+            "value": 24256,
+            "unit": "ns/op\t   58551 B/op\t      16 allocs/op",
+            "extra": "46960 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_0 - ns/op",
+            "value": 24256,
+            "unit": "ns/op",
+            "extra": "46960 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_0 - B/op",
+            "value": 58551,
+            "unit": "B/op",
+            "extra": "46960 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_0 - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "46960 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_1",
+            "value": 34163,
+            "unit": "ns/op\t   41976 B/op\t      17 allocs/op",
+            "extra": "33868 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_1 - ns/op",
+            "value": 34163,
+            "unit": "ns/op",
+            "extra": "33868 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_1 - B/op",
+            "value": 41976,
+            "unit": "B/op",
+            "extra": "33868 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_1 - allocs/op",
+            "value": 17,
+            "unit": "allocs/op",
+            "extra": "33868 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_2",
+            "value": 55636,
+            "unit": "ns/op\t   40076 B/op\t      17 allocs/op",
+            "extra": "21534 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_2 - ns/op",
+            "value": 55636,
+            "unit": "ns/op",
+            "extra": "21534 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_2 - B/op",
+            "value": 40076,
+            "unit": "B/op",
+            "extra": "21534 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_2 - allocs/op",
+            "value": 17,
+            "unit": "allocs/op",
+            "extra": "21534 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_3",
+            "value": 53232,
+            "unit": "ns/op\t   39363 B/op\t      17 allocs/op",
+            "extra": "23014 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_3 - ns/op",
+            "value": 53232,
+            "unit": "ns/op",
+            "extra": "23014 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_3 - B/op",
+            "value": 39363,
+            "unit": "B/op",
+            "extra": "23014 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_3 - allocs/op",
+            "value": 17,
+            "unit": "allocs/op",
+            "extra": "23014 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_4",
+            "value": 80367,
+            "unit": "ns/op\t   38343 B/op\t      16 allocs/op",
+            "extra": "15308 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_4 - ns/op",
+            "value": 80367,
+            "unit": "ns/op",
+            "extra": "15308 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_4 - B/op",
+            "value": 38343,
+            "unit": "B/op",
+            "extra": "15308 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_4 - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "15308 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_5",
+            "value": 81855,
+            "unit": "ns/op\t   37833 B/op\t      16 allocs/op",
+            "extra": "14689 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_5 - ns/op",
+            "value": 81855,
+            "unit": "ns/op",
+            "extra": "14689 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_5 - B/op",
+            "value": 37833,
+            "unit": "B/op",
+            "extra": "14689 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_5 - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "14689 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_6",
+            "value": 83848,
+            "unit": "ns/op\t   38127 B/op\t      16 allocs/op",
+            "extra": "13959 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_6 - ns/op",
+            "value": 83848,
+            "unit": "ns/op",
+            "extra": "13959 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_6 - B/op",
+            "value": 38127,
+            "unit": "B/op",
+            "extra": "13959 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_6 - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "13959 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_7",
+            "value": 80887,
+            "unit": "ns/op\t   38806 B/op\t      16 allocs/op",
+            "extra": "14654 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_7 - ns/op",
+            "value": 80887,
+            "unit": "ns/op",
+            "extra": "14654 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_7 - B/op",
+            "value": 38806,
+            "unit": "B/op",
+            "extra": "14654 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_7 - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "14654 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_8",
+            "value": 80353,
+            "unit": "ns/op\t   38423 B/op\t      16 allocs/op",
+            "extra": "14824 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_8 - ns/op",
+            "value": 80353,
+            "unit": "ns/op",
+            "extra": "14824 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_8 - B/op",
+            "value": 38423,
+            "unit": "B/op",
+            "extra": "14824 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_8 - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "14824 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_9",
+            "value": 79792,
+            "unit": "ns/op\t   38265 B/op\t      16 allocs/op",
+            "extra": "14886 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_9 - ns/op",
+            "value": 79792,
+            "unit": "ns/op",
+            "extra": "14886 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_9 - B/op",
+            "value": 38265,
+            "unit": "B/op",
+            "extra": "14886 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCompression_Gzip/level_9 - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "14886 times\n4 procs"
           }
         ]
       }
