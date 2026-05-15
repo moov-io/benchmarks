@@ -50,11 +50,11 @@ jobs:
         if: ${{ inputs.setup_ssh_key }}
         run: 'git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"'
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: 'moov-io/benchmarks'
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           repository: "${{inputs.org}}/${{inputs.name}}"
           ref: "${{inputs.branch}}"
