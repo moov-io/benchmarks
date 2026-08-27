@@ -1,1 +1,10 @@
 * @adamdecaf
+
+# Lockfiles have no owners so dependency-only PRs skip code-owner review.
+go.mod
+go.sum
+**/go.mod
+**/go.sum
+
+# GitHub Actions workflows have no owners so action-only PRs skip code-owner review.
+.github/workflows/**
