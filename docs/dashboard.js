@@ -27,6 +27,42 @@
       urls: ["https://raw.githubusercontent.com/moov-io/iso8583/bench-data/docs/bench/data.js"],
     },
     {
+      id: "metro2",
+      title: "metro2",
+      repo: "moov-io/metro2",
+      urls: ["https://raw.githubusercontent.com/moov-io/metro2/bench-data/docs/bench/data.js"],
+    },
+    {
+      id: "pamspr",
+      title: "pamspr",
+      repo: "moov-io/pamspr",
+      urls: ["https://raw.githubusercontent.com/moov-io/pamspr/bench-data/docs/bench/data.js"],
+    },
+    {
+      id: "bertlv",
+      title: "bertlv",
+      repo: "moov-io/bertlv",
+      urls: ["https://raw.githubusercontent.com/moov-io/bertlv/bench-data/docs/bench/data.js"],
+    },
+    {
+      id: "signedxml",
+      title: "signedxml",
+      repo: "moov-io/signedxml",
+      urls: ["https://raw.githubusercontent.com/moov-io/signedxml/bench-data/docs/bench/data.js"],
+    },
+    {
+      id: "tr31",
+      title: "tr31",
+      repo: "moov-io/tr31",
+      urls: ["https://raw.githubusercontent.com/moov-io/tr31/bench-data/docs/bench/data.js"],
+    },
+    {
+      id: "wire20022",
+      title: "wire20022",
+      repo: "moov-io/wire20022",
+      urls: ["https://raw.githubusercontent.com/moov-io/wire20022/bench-data/docs/bench/data.js"],
+    },
+    {
       id: "watchman",
       title: "Watchman",
       repo: "moov-io/watchman",
@@ -56,6 +92,7 @@
     metric: "ns/op",
     project: "all",
     change: "all",
+    name: "",
     sources: [],
     chart: null,
   };
@@ -277,6 +314,18 @@
     }
   }
 
+  function matchesName(row) {
+    const q = state.name.trim().toLowerCase();
+    if (!q) {
+      return true;
+    }
+    return row.name.toLowerCase().includes(q);
+  }
+
+  function matchesRow(row) {
+    return matchesChange(row) && matchesName(row);
+  }
+
   function renderStatus() {
     const box = $("status");
     box.replaceChildren();
@@ -302,7 +351,7 @@
     root.replaceChildren();
     let shown = 0;
     for (const src of visibleSources()) {
-      const series = seriesFor(src, state.metric).filter(matchesChange);
+      const series = seriesFor(src, state.metric).filter(matchesRow);
       series.sort((a, b) => (b.points.at(-1)?.value || 0) - (a.points.at(-1)?.value || 0));
       if (!series.length) {
         continue;
@@ -393,9 +442,9 @@
       const empty = document.createElement("p");
       empty.className = "muted";
       empty.textContent =
-        state.change === "all"
+        state.change === "all" && !state.name.trim()
           ? "No benchmark data loaded."
-          : "No benches match this change filter.";
+          : "No benches match this filter.";
       root.appendChild(empty);
     }
   }
@@ -512,6 +561,10 @@
     $("change").addEventListener("change", (e) => {
       state.change = e.target.value;
       $("detail").hidden = true;
+      render();
+    });
+    $("name").addEventListener("input", (e) => {
+      state.name = e.target.value;
       render();
     });
     $("detail-close").addEventListener("click", () => {
