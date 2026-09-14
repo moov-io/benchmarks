@@ -164,8 +164,16 @@ tr.bench:hover {
   color: var(--bad);
 }
 
+.trend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
 .spark {
   display: block;
+  flex: none;
 }
 
 .spark polyline {
@@ -217,8 +225,8 @@ code {
 }
 
 @media (max-width: 720px) {
-  th:nth-child(5),
-  td:nth-child(5) {
+  th:nth-child(3),
+  td:nth-child(3) {
     display: none;
   }
 }

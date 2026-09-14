@@ -171,7 +171,40 @@
     const pct = ((curr - prev) / prev) * 100;
     const cls = pct > 0.5 ? "bad" : pct < -0.5 ? "good" : "";
     const sign = pct > 0 ? "+" : "";
-    return { text: `${sign}${pct.toFixed(1)}%`, cls };
+    return { text: `${sign}${pct.toFixed(1)}%`, cls, pct };
+  }
+
+  function median(values) {
+    if (!values.length) {
+      return NaN;
+    }
+    const sorted = [...values].sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    if (sorted.length % 2) {
+      return sorted[mid];
+    }
+    return (sorted[mid - 1] + sorted[mid]) / 2;
+  }
+
+  // Latest vs median of the previous up-to-10 runs, not just the last pair.
+  const TREND_WINDOW = 10;
+  const TREND_MIN = 3;
+
+  function trendVsMedian(points) {
+    const values = points.map((pt) => pt.value);
+    if (values.length < TREND_MIN) {
+      return { text: `need ${TREND_MIN}+ runs`, cls: "", title: "Trend uses the median of prior runs once there are at least 3" };
+    }
+    const latest = values[values.length - 1];
+    const prior = values.slice(Math.max(0, values.length - 1 - TREND_WINDOW), -1);
+    const base = median(prior);
+    const delta = fmtDelta(latest, base);
+    const n = prior.length;
+    return {
+      text: `${delta.text} vs median (${n})`,
+      cls: delta.cls,
+      title: `Latest vs median of the previous ${n} run${n === 1 ? "" : "s"} (window up to ${TREND_WINDOW})`,
+    };
   }
 
   function fmtWhen(ms) {
@@ -202,12 +235,12 @@
     line.setAttribute("fill", "none");
     line.setAttribute("points", pts.join(" "));
     svg.appendChild(line);
-    const last = values[values.length - 1];
-    const first = values[0];
-    if (last < first) {
-      svg.classList.add("good");
-    } else if (last > first) {
-      svg.classList.add("bad");
+    return svg;
+  }
+
+  function colorSpark(svg, cls) {
+    if (cls) {
+      svg.classList.add(cls);
     }
     return svg;
   }
@@ -278,7 +311,8 @@
 
       const table = document.createElement("table");
       const thead = document.createElement("thead");
-      thead.innerHTML = "<tr><th>Benchmark</th><th>Latest</th><th>Previous</th><th>Δ</th><th>Trend</th></tr>";
+      thead.innerHTML =
+        "<tr><th>Benchmark</th><th>Latest</th><th>Previous</th><th>Δ prev</th><th>Trend</th></tr>";
       table.appendChild(thead);
       const tbody = document.createElement("tbody");
       for (const row of series) {
@@ -304,11 +338,19 @@
         const d = document.createElement("td");
         const delta = fmtDelta(last.value, prev?.value);
         d.className = "delta " + delta.cls;
+        d.title = "Change from the immediately previous run";
         d.textContent = delta.text;
         tr.appendChild(d);
 
+        const trend = trendVsMedian(row.points);
         const s = document.createElement("td");
-        s.appendChild(sparkline(row.points.map((pt) => pt.value)));
+        s.className = "trend";
+        s.title = trend.title;
+        s.appendChild(colorSpark(sparkline(row.points.map((pt) => pt.value)), trend.cls));
+        const label = document.createElement("span");
+        label.className = "delta " + trend.cls;
+        label.textContent = trend.text;
+        s.appendChild(label);
         tr.appendChild(s);
 
         tbody.appendChild(tr);
