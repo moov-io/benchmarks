@@ -51,7 +51,11 @@
       <ul>
         <li>Each point is one CI run. The x-axis is the run date, not a hash from this hub repo.</li>
         <li>Click a row for the full series. Click a point on the chart to open that project commit on GitHub.</li>
-        <li>Δ is versus the previous run. Red means slower / more memory / more allocs.</li>
+        <li>Latest and Previous are the two most recent runs. Δ prev is that step change.</li>
+        <li>
+          Trend is the full series (sparkline) and latest vs the median of the previous up to 10 runs,
+          so one noisy job does not define the direction. Needs at least 3 runs. Red means slower / more memory / more allocs.
+        </li>
         <li>
           Watchman already publishes from
           <a href="https://github.com/moov-io/watchman">moov-io/watchman</a>.
