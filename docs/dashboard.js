@@ -55,6 +55,7 @@
   const state = {
     metric: "ns/op",
     project: "all",
+    change: "all",
     sources: [],
     chart: null,
   };
@@ -252,6 +253,30 @@
     return state.sources.filter((s) => s.id === state.project && s.data);
   }
 
+  function changeClass(row) {
+    const trend = trendVsMedian(row.points);
+    if (trend.cls === "good" || trend.cls === "bad") {
+      return trend.cls;
+    }
+    const last = row.points.at(-1);
+    const prev = row.points.length > 1 ? row.points.at(-2) : null;
+    return fmtDelta(last?.value, prev?.value).cls;
+  }
+
+  function matchesChange(row) {
+    const cls = changeClass(row);
+    switch (state.change) {
+      case "improved":
+        return cls === "good";
+      case "worsened":
+        return cls === "bad";
+      case "changed":
+        return cls === "good" || cls === "bad";
+      default:
+        return true;
+    }
+  }
+
   function renderStatus() {
     const box = $("status");
     box.replaceChildren();
@@ -275,9 +300,14 @@
   function renderOverview() {
     const root = $("overview");
     root.replaceChildren();
+    let shown = 0;
     for (const src of visibleSources()) {
-      const series = seriesFor(src, state.metric);
+      const series = seriesFor(src, state.metric).filter(matchesChange);
       series.sort((a, b) => (b.points.at(-1)?.value || 0) - (a.points.at(-1)?.value || 0));
+      if (!series.length) {
+        continue;
+      }
+      shown += series.length;
 
       const card = document.createElement("article");
       card.className = "card";
@@ -358,6 +388,15 @@
       table.appendChild(tbody);
       card.appendChild(table);
       root.appendChild(card);
+    }
+    if (!shown) {
+      const empty = document.createElement("p");
+      empty.className = "muted";
+      empty.textContent =
+        state.change === "all"
+          ? "No benchmark data loaded."
+          : "No benches match this change filter.";
+      root.appendChild(empty);
     }
   }
 
@@ -467,6 +506,11 @@
     });
     $("project").addEventListener("change", (e) => {
       state.project = e.target.value;
+      $("detail").hidden = true;
+      render();
+    });
+    $("change").addEventListener("change", (e) => {
+      state.change = e.target.value;
       $("detail").hidden = true;
       render();
     });
