@@ -35,16 +35,18 @@
 
     <section id="status" class="status" aria-live="polite"></section>
 
-    <section id="overview"></section>
-
     <section class="detail" hidden id="detail">
       <div class="detail-head">
         <h2 id="detail-title">Benchmark</h2>
         <button type="button" id="detail-close">Close chart</button>
       </div>
       <p id="detail-meta" class="muted"></p>
-      <canvas id="detail-chart" aria-label="Benchmark history"></canvas>
+      <div class="chart-wrap">
+        <canvas id="detail-chart" aria-label="Benchmark history"></canvas>
+      </div>
     </section>
+
+    <section id="overview"></section>
 
     <section class="help">
       <h2>How to read this</h2>
