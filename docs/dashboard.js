@@ -93,6 +93,7 @@
     project: "all",
     change: "all",
     name: "",
+    sort: { key: "latest", dir: "desc" },
     sources: [],
     chart: null,
   };
@@ -241,6 +242,7 @@
     return {
       text: `${delta.text} vs median (${n})`,
       cls: delta.cls,
+      pct: delta.pct,
       title: `Latest vs median of the previous ${n} run${n === 1 ? "" : "s"} (window up to ${TREND_WINDOW})`,
     };
   }
@@ -326,6 +328,90 @@
     return matchesChange(row) && matchesName(row);
   }
 
+  function rowMetrics(row) {
+    const last = row.points.at(-1);
+    const prev = row.points.length > 1 ? row.points.at(-2) : null;
+    const delta = fmtDelta(last?.value, prev?.value);
+    const trend = trendVsMedian(row.points);
+    return { last, prev, delta, trend };
+  }
+
+  function sortValue(row, key) {
+    const m = rowMetrics(row);
+    switch (key) {
+      case "name":
+        return row.name.toLowerCase();
+      case "latest":
+        return m.last?.value;
+      case "previous":
+        return m.prev?.value;
+      case "delta":
+        return m.delta.pct;
+      case "trend":
+        return Number.isFinite(m.trend.pct) ? m.trend.pct : m.delta.pct;
+      default:
+        return m.last?.value;
+    }
+  }
+
+  function sortSeries(series) {
+    const { key, dir } = state.sort;
+    const sign = dir === "asc" ? 1 : -1;
+    return series.slice().sort((a, b) => {
+      const av = sortValue(a, key);
+      const bv = sortValue(b, key);
+      const aMissing = av == null || (typeof av === "number" && !Number.isFinite(av));
+      const bMissing = bv == null || (typeof bv === "number" && !Number.isFinite(bv));
+      if (aMissing && bMissing) {
+        return 0;
+      }
+      if (aMissing) {
+        return 1;
+      }
+      if (bMissing) {
+        return -1;
+      }
+      if (typeof av === "string" && typeof bv === "string") {
+        return av.localeCompare(bv) * sign;
+      }
+      if (av < bv) {
+        return -1 * sign;
+      }
+      if (av > bv) {
+        return 1 * sign;
+      }
+      return a.name.localeCompare(b.name);
+    });
+  }
+
+  function sortHeader(label, key) {
+    const th = document.createElement("th");
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "sort";
+    const active = state.sort.key === key;
+    if (active) {
+      btn.classList.add("active");
+      btn.setAttribute("aria-sort", state.sort.dir === "asc" ? "ascending" : "descending");
+    } else {
+      btn.setAttribute("aria-sort", "none");
+    }
+    const arrow = active ? (state.sort.dir === "asc" ? " ↑" : " ↓") : "";
+    btn.textContent = label + arrow;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (state.sort.key === key) {
+        state.sort.dir = state.sort.dir === "asc" ? "desc" : "asc";
+      } else {
+        state.sort.key = key;
+        state.sort.dir = key === "name" ? "asc" : "desc";
+      }
+      render();
+    });
+    th.appendChild(btn);
+    return th;
+  }
+
   function renderStatus() {
     const box = $("status");
     box.replaceChildren();
@@ -351,8 +437,7 @@
     root.replaceChildren();
     let shown = 0;
     for (const src of visibleSources()) {
-      const series = seriesFor(src, state.metric).filter(matchesRow);
-      series.sort((a, b) => (b.points.at(-1)?.value || 0) - (a.points.at(-1)?.value || 0));
+      const series = sortSeries(seriesFor(src, state.metric).filter(matchesRow));
       if (!series.length) {
         continue;
       }
@@ -390,13 +475,17 @@
 
       const table = document.createElement("table");
       const thead = document.createElement("thead");
-      thead.innerHTML =
-        "<tr><th>Benchmark</th><th>Latest</th><th>Previous</th><th>Δ prev</th><th>Trend</th></tr>";
+      const hr = document.createElement("tr");
+      hr.appendChild(sortHeader("Benchmark", "name"));
+      hr.appendChild(sortHeader("Latest", "latest"));
+      hr.appendChild(sortHeader("Previous", "previous"));
+      hr.appendChild(sortHeader("Δ prev", "delta"));
+      hr.appendChild(sortHeader("Trend", "trend"));
+      thead.appendChild(hr);
       table.appendChild(thead);
       const tbody = document.createElement("tbody");
       for (const row of series) {
-        const last = row.points.at(-1);
-        const prev = row.points.length > 1 ? row.points.at(-2) : null;
+        const { last, prev, delta, trend } = rowMetrics(row);
         const tr = document.createElement("tr");
         tr.className = "bench";
         tr.addEventListener("click", () => showDetail(row));
@@ -415,13 +504,11 @@
         tr.appendChild(p);
 
         const d = document.createElement("td");
-        const delta = fmtDelta(last.value, prev?.value);
         d.className = "delta " + delta.cls;
         d.title = "Change from the immediately previous run";
         d.textContent = delta.text;
         tr.appendChild(d);
 
-        const trend = trendVsMedian(row.points);
         const s = document.createElement("td");
         s.className = "trend";
         s.title = trend.title;

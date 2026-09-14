@@ -143,6 +143,21 @@ th {
   border-top: 0;
 }
 
+th .sort {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+th .sort.active {
+  color: var(--ink);
+}
+
 tr.bench {
   cursor: pointer;
 }
