@@ -1,24 +1,81 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>moov-io benchmarks</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moov OSS benchmarks</title>
+    <link rel="stylesheet" href="./dashboard.css" />
   </head>
   <body>
-    <h3>Ran in moov-io/benchmarks</h3>
-    <ul>
-      <li><a href="./bench/ach/">ACH</a></li>
-      <li><a href="./bench/cryptfs/">cryptfs</a></li>
-    </ul>
+    <header class="top">
+      <div>
+        <h1>Moov OSS benchmarks</h1>
+        <p class="lede">
+          Daily Go benchmarks, stored in each project so the commit on the chart is the code that ran.
+          Lower is better for time, memory, and allocations.
+        </p>
+      </div>
+      <div class="controls">
+        <label>
+          Metric
+          <select id="metric" aria-label="Metric">
+            <option value="ns/op">time (ns/op)</option>
+            <option value="B/op">memory (B/op)</option>
+            <option value="allocs/op">allocs (allocs/op)</option>
+          </select>
+        </label>
+        <label>
+          Project
+          <select id="project" aria-label="Project">
+            <option value="all">all</option>
+          </select>
+        </label>
+      </div>
+    </header>
 
-    <h3>Watchman</h3>
-    <ul>
-      <li><a href="https://moov-io.github.io/watchman/bench/common/">Watchman</a></li>
-      <li><a href="https://moov-io.github.io/watchman/bench/sources/ofac/">OFAC</a></li>
-      <li><a href="https://moov-io.github.io/watchman/bench/sources/csl_us/">CSL US</a></li>
-    </ul>
+    <section id="status" class="status" aria-live="polite"></section>
 
-    <p>
-      Reach out to <code>oss@moov.io</code> if you have any questions, comments, or concerns.
-    </p>
+    <section id="overview"></section>
+
+    <section class="detail" hidden id="detail">
+      <div class="detail-head">
+        <h2 id="detail-title">Benchmark</h2>
+        <button type="button" id="detail-close">Close chart</button>
+      </div>
+      <p id="detail-meta" class="muted"></p>
+      <canvas id="detail-chart" aria-label="Benchmark history"></canvas>
+    </section>
+
+    <section class="help">
+      <h2>How to read this</h2>
+      <ul>
+        <li>Each point is one CI run. The x-axis is the run date, not a hash from this hub repo.</li>
+        <li>Click a row for the full series. Click a point on the chart to open that project commit on GitHub.</li>
+        <li>Δ is versus the previous run. Red means slower / more memory / more allocs.</li>
+        <li>
+          Watchman already publishes from
+          <a href="https://github.com/moov-io/watchman">moov-io/watchman</a>.
+          ACH, cryptfs, and iso8583 now do the same in their own repos.
+        </li>
+        <li>
+          Older ACH and cryptfs charts under
+          <a href="./bench/ach/">bench/ach</a> and
+          <a href="./bench/cryptfs/">bench/cryptfs</a>
+          are an archive. Those commit hashes belong to <code>moov-io/benchmarks</code>, not the libraries.
+        </li>
+      </ul>
+      <p>
+        Add a library with the workflow in
+        <a href="https://github.com/moov-io/benchmarks/blob/master/docs/adding-a-project.md">adding-a-project.md</a>.
+        Questions: <code>oss@moov.io</code>.
+      </p>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"
+      integrity="sha384-T/4KgSWuZEPozpPz7rnnp/5lDSnpY1VPJCojf1S81uTHS1E38qgLfMgVsAeRCWc4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./dashboard.js"></script>
   </body>
 </html>

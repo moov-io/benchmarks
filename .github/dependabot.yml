@@ -4,18 +4,12 @@ updates:
     directory: /
     schedule:
       interval: daily
-
-  - package-ecosystem: docker
-    directory: /
-    schedule:
-      interval: daily
-
-  - package-ecosystem: bundler
-    directory: /docs
-    schedule:
-      interval: daily
+    cooldown:
+      default-days: 7
 
   - package-ecosystem: gomod
     directory: /
     schedule:
       interval: daily
+    cooldown:
+      default-days: 7
