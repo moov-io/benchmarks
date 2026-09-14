@@ -6,7 +6,7 @@ Watchman already does this. ACH, cryptfs, and iso8583 follow the same layout:
 
 - workflow: `.github/workflows/bench.yml`
 - command: `make bench` writes `output.txt`
-- results: `docs/bench/data.js` on `master`
+- results: `docs/bench/data.js` on the `bench-data` branch (default branches require PRs, so Actions cannot push results to `master`)
 - hub: [moov-io.github.io/benchmarks](https://moov-io.github.io/benchmarks/) fetches `docs/bench/data.js` from each repo
 
 ## 1. Curate the suite
@@ -29,6 +29,7 @@ Copy `.github/workflows/bench.yml` from `moov-io/ach`. Keep:
 - `permissions: {}` at workflow level; `contents: write` and `deployments: write` on the job
 - `persist-credentials: false` on checkout
 - `fetch-depth: 50` so the job can walk past previous result commits
+- `gh-pages-branch: bench-data` (not `master`; default branches require PRs)
 - `ref:` set to the last commit whose message does not contain `benchmark result`
 - `summary-always: true` so each run shows a comparison in the job log
 - `paths-ignore: ['docs/bench/**']` on the project's existing `push` CI so result commits do not re-run the test matrix
@@ -42,7 +43,7 @@ Add a source in `docs/dashboard.js` in this repository:
   id: "yourlib",
   title: "yourlib",
   repo: "moov-io/yourlib",
-  urls: ["https://raw.githubusercontent.com/moov-io/yourlib/master/docs/bench/data.js"],
+  urls: ["https://raw.githubusercontent.com/moov-io/yourlib/bench-data/docs/bench/data.js"],
 }
 ```
 
