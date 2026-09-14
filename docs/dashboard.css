@@ -62,7 +62,8 @@ label {
 }
 
 select,
-button {
+button,
+input[type="search"] {
   font: inherit;
   color: var(--ink);
   background: var(--card);
