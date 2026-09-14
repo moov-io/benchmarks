@@ -7,7 +7,7 @@
       title: "ACH",
       repo: "moov-io/ach",
       urls: [
-        "https://raw.githubusercontent.com/moov-io/ach/master/docs/bench/data.js",
+        "https://raw.githubusercontent.com/moov-io/ach/bench-data/docs/bench/data.js",
         "./bench/ach/data.js",
       ],
     },
@@ -16,7 +16,7 @@
       title: "cryptfs",
       repo: "moov-io/cryptfs",
       urls: [
-        "https://raw.githubusercontent.com/moov-io/cryptfs/master/docs/bench/data.js",
+        "https://raw.githubusercontent.com/moov-io/cryptfs/bench-data/docs/bench/data.js",
         "./bench/cryptfs/data.js",
       ],
     },
@@ -24,7 +24,7 @@
       id: "iso8583",
       title: "iso8583",
       repo: "moov-io/iso8583",
-      urls: ["https://raw.githubusercontent.com/moov-io/iso8583/master/docs/bench/data.js"],
+      urls: ["https://raw.githubusercontent.com/moov-io/iso8583/bench-data/docs/bench/data.js"],
     },
     {
       id: "watchman",
