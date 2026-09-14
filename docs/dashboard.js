@@ -371,11 +371,16 @@
     const canvas = $("detail-chart");
     if (state.chart) {
       state.chart.destroy();
+      state.chart = null;
     }
+    const labels = row.points.map((pt) => {
+      const d = new Date(pt.date);
+      return d.toISOString().slice(0, 16).replace("T", " ");
+    });
     state.chart = new Chart(canvas, {
       type: "line",
       data: {
-        labels: row.points.map((pt) => new Date(pt.date).toISOString().slice(0, 10)),
+        labels,
         datasets: [
           {
             label: `${row.name} (${state.metric})`,
@@ -391,6 +396,8 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: false,
+        resizeDelay: 50,
         plugins: {
           legend: { display: false },
           tooltip: {
@@ -413,7 +420,13 @@
             title: { display: true, text: state.metric },
           },
           x: {
-            title: { display: true, text: "run date" },
+            title: { display: true, text: "run time (UTC)" },
+            ticks: {
+              maxRotation: 45,
+              minRotation: 0,
+              autoSkip: true,
+              maxTicksLimit: 8,
+            },
           },
         },
         onClick(_evt, elements) {
@@ -427,7 +440,7 @@
         },
       },
     });
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    section.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
   function fillProjectSelect() {
@@ -459,6 +472,10 @@
     });
     $("detail-close").addEventListener("click", () => {
       $("detail").hidden = true;
+      if (state.chart) {
+        state.chart.destroy();
+        state.chart = null;
+      }
     });
 
     state.sources = await Promise.all(SOURCES.map(loadSource));
