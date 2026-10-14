@@ -16,10 +16,11 @@ Do not `-bench .` on packages that turned unit tests into `Benchmark*` helpers. 
 ```make
 .PHONY: bench
 bench:
-	go test . -count=1 -run '^$$' -bench '^(BenchmarkHotPath|BenchmarkOther)' -benchmem | tee output.txt
+	go test . -count=6 -cpu=2 -run '^$$' -bench '^(BenchmarkHotPath|BenchmarkOther)' -benchmem > output.raw.txt
+	python3 scripts/bench-median.py output.raw.txt | tee output.txt
 ```
 
-Add `output.txt` to `.gitignore`.
+`-count=6 -cpu=2` produces six samples at `GOMAXPROCS=2`. `scripts/bench-median.py` (copy from `moov-io/ach`) collapses those to one median line per benchmark so `github-action-benchmark` stores a single point. Add `output.txt` and `output.raw.txt` to `.gitignore`.
 
 ## 2. Workflow
 
@@ -31,6 +32,8 @@ Copy `.github/workflows/bench.yml` from `moov-io/ach`. Keep:
 - `fetch-depth: 50` so the job can walk past previous result commits
 - `gh-pages-branch: bench-data` (not `master`; default branches require PRs)
 - `ref:` set to the last commit whose message does not contain `benchmark result`
+- `runs-on: ubuntu-24.04`
+- `alert-threshold: "150%"`
 - `summary-always: true` so each run shows a comparison in the job log
 - `paths-ignore: ['docs/bench/**']` on the project's existing `push` CI so result commits do not re-run the test matrix
 
