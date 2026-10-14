@@ -15,7 +15,7 @@ Each library runs its own suite on a schedule and stores `docs/bench/data.js` on
 | [signedxml](https://github.com/moov-io/signedxml) | `make bench` in `moov-io/signedxml` | [data](https://github.com/moov-io/signedxml/tree/bench-data/docs/bench) |
 | [tr31](https://github.com/moov-io/tr31) | `make bench` in `moov-io/tr31` | [data](https://github.com/moov-io/tr31/tree/bench-data/docs/bench) |
 | [wire20022](https://github.com/moov-io/wire20022) | `make bench` in `moov-io/wire20022` | [data](https://github.com/moov-io/wire20022/tree/bench-data/docs/bench) |
-| [Watchman](https://github.com/moov-io/watchman) | `.github/workflows/bench.yml` | [common](https://moov-io.github.io/watchman/bench/common/), [OFAC](https://moov-io.github.io/watchman/bench/sources/ofac/), [CSL US](https://moov-io.github.io/watchman/bench/sources/csl_us/) |
+| [Watchman](https://github.com/moov-io/watchman) | `.github/workflows/bench.yml` | [common](https://moov-io.github.io/benchmarks/?project=watchman), [OFAC](https://moov-io.github.io/benchmarks/?project=watchman-ofac), [CSL US](https://moov-io.github.io/benchmarks/?project=watchman-csl) |
 
 What we keep in the suite is the hot path, not every `Benchmark*` helper that used to be a unit test. ACH tracks large-file read/write, merge, build, and field parse/format. cryptfs tracks AES and gzip. iso8583 tracks marshal/unpack. metro2 tracks file read. pamspr tracks streaming writers. bertlv tracks tag lookup. signedxml tracks XML encryption. tr31 tracks key unwrap. wire20022 tracks ISO 20022 parse/write. Watchman tracks search, scoring, and list ingest.
 

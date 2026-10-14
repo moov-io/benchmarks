@@ -66,19 +66,19 @@
       id: "watchman",
       title: "Watchman",
       repo: "moov-io/watchman",
-      urls: ["https://raw.githubusercontent.com/moov-io/watchman/master/docs/bench/common/data.js"],
+      urls: ["https://raw.githubusercontent.com/moov-io/watchman/bench-data/docs/bench/common/data.js"],
     },
     {
       id: "watchman-ofac",
       title: "Watchman OFAC",
       repo: "moov-io/watchman",
-      urls: ["https://raw.githubusercontent.com/moov-io/watchman/master/docs/bench/sources/ofac/data.js"],
+      urls: ["https://raw.githubusercontent.com/moov-io/watchman/bench-data/docs/bench/sources/ofac/data.js"],
     },
     {
       id: "watchman-csl",
       title: "Watchman CSL US",
       repo: "moov-io/watchman",
-      urls: ["https://raw.githubusercontent.com/moov-io/watchman/master/docs/bench/sources/csl_us/data.js"],
+      urls: ["https://raw.githubusercontent.com/moov-io/watchman/bench-data/docs/bench/sources/csl_us/data.js"],
     },
   ];
 
@@ -99,6 +99,33 @@
   };
 
   const $ = (id) => document.getElementById(id);
+
+  function readParams() {
+    const p = new URLSearchParams(location.search);
+    const project = p.get("project");
+    if (project === "all" || SOURCES.some((s) => s.id === project)) {
+      state.project = project;
+    }
+    const metric = p.get("metric");
+    if (metric && SUFFIX[metric]) {
+      state.metric = metric;
+    }
+  }
+
+  function writeParams() {
+    const p = new URLSearchParams();
+    if (state.project !== "all") {
+      p.set("project", state.project);
+    }
+    if (state.metric !== "ns/op") {
+      p.set("metric", state.metric);
+    }
+    const q = p.toString();
+    const next = q ? `${location.pathname}?${q}` : location.pathname;
+    if (`${location.pathname}${location.search}` !== next) {
+      history.replaceState(null, "", next);
+    }
+  }
 
   function parseDataJs(text) {
     const trimmed = text.replace(/^\uFEFF/, "").trim();
@@ -634,15 +661,20 @@
   }
 
   async function main() {
+    readParams();
     fillProjectSelect();
+    $("metric").value = state.metric;
+    $("project").value = state.project;
     $("metric").addEventListener("change", (e) => {
       state.metric = e.target.value;
       $("detail").hidden = true;
+      writeParams();
       render();
     });
     $("project").addEventListener("change", (e) => {
       state.project = e.target.value;
       $("detail").hidden = true;
+      writeParams();
       render();
     });
     $("change").addEventListener("change", (e) => {

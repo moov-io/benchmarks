@@ -77,15 +77,14 @@
           so one noisy job does not define the direction. Needs at least 3 runs. Red means slower / more memory / more allocs.
         </li>
         <li>
-          Watchman already publishes from
-          <a href="https://github.com/moov-io/watchman">moov-io/watchman</a>.
-          ACH, cryptfs, and iso8583 now do the same in their own repos.
+          Each library publishes <code>docs/bench/data.js</code> from its own
+          <code>bench-data</code> branch. Watchman stores common, OFAC, and CSL US suites separately.
         </li>
         <li>
-          Older ACH and cryptfs charts under
           <a href="./bench/ach/">bench/ach</a> and
           <a href="./bench/cryptfs/">bench/cryptfs</a>
-          are an archive. Those commit hashes belong to <code>moov-io/benchmarks</code>, not the libraries.
+          redirect here. Those files are an archive from when this hub ran the suites;
+          their commit hashes belong to <code>moov-io/benchmarks</code>.
         </li>
       </ul>
       <p>

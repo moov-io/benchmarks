@@ -2,7 +2,7 @@
 
 Run Go benchmarks **in the project repo** so `github-action-benchmark` records that project's commit, not a hash from `moov-io/benchmarks`.
 
-Watchman already does this. ACH, cryptfs, and iso8583 follow the same layout:
+Every listed library does this. ACH is a good template:
 
 - workflow: `.github/workflows/bench.yml`
 - command: `make bench` writes `output.txt`
